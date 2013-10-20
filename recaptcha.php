@@ -229,8 +229,8 @@ REGISTRATION;
             $validated['public_key'] = trim($input['public_key']);
             $validated['private_key'] = trim($input['private_key']);
             
-            $validated['show_in_comments'] = ($input['show_in_comments'] == 1 ? 1 : 0);
-            $validated['bypass_for_registered_users'] = ($input['bypass_for_registered_users'] == 1 ? 1: 0);
+            $validated['show_in_comments'] = !empty( $input['show_in_comments'] ) ? 1 : 0;
+            $validated['bypass_for_registered_users'] = !empty( $input['bypass_for_registered_users'] ) ? 1 : 0;
             
             $capabilities = array ('read', 'edit_posts', 'publish_posts', 'moderate_comments', 'activate_plugins');
             $themes = array ('red', 'white', 'blackglass', 'clean');
@@ -240,14 +240,14 @@ REGISTRATION;
             $validated['minimum_bypass_level'] = $this->validate_dropdown($capabilities, 'minimum_bypass_level', $input['minimum_bypass_level']);
             $validated['comments_theme'] = $this->validate_dropdown($themes, 'comments_theme', $input['comments_theme']);
             
-            $validated['comments_tab_index'] = $input['comments_tab_index'] ? $input["comments_tab_index"] : 5; // use the intval filter
+            $validated['comments_tab_index'] = !empty( $input['comments_tab_index'] ) ? absint( $input["comments_tab_index"] ) : 5;
             
-            $validated['show_in_registration'] = ($input['show_in_registration'] == 1 ? 1 : 0);
+            $validated['show_in_registration'] = !empty( $input['show_in_registration'] ) ? 1 : 0;
             $validated['registration_theme'] = $this->validate_dropdown($themes, 'registration_theme', $input['registration_theme']);
-            $validated['registration_tab_index'] = $input['registration_tab_index'] ? $input["registration_tab_index"] : 30; // use the intval filter
+            $validated['registration_tab_index'] = !empty( $input['registration_tab_index'] ) ? absint( $input["registration_tab_index"] ) : 30;
             
             $validated['recaptcha_language'] = $this->validate_dropdown($recaptcha_languages, 'recaptcha_language', $input['recaptcha_language']);
-            $validated['xhtml_compliance'] = ($input['xhtml_compliance'] == 1 ? 1 : 0);
+            $validated['xhtml_compliance'] = !empty( $input['xhtml_compliance'] ) ? 1 : 0;
             
             $validated['no_response_error'] = $input['no_response_error'];
             $validated['incorrect_response_error'] = $input['incorrect_response_error'];
