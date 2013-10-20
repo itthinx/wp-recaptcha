@@ -2,7 +2,7 @@
 Contributors: BlaenkDenum
 Tags: comments, registration, recaptcha, antispam, mailhide, captcha
 Requires at least: 2.7
-Tested up to: 2.9.1
+Tested up to: 3.6.1
 Stable tag: 3.1.7
 
 Integrates reCAPTCHA anti-spam methods with WordPress including comment, registration, and email spam protection.
