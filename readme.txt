@@ -46,6 +46,7 @@ To install in regular WordPress and [WordPress MultiSite](http://codex.wordpress
 
 = Version 3.1.7 =
 * Fixed undefined indexes when displaying reCAPTCHA with the comment form.
+* Fixed undefined index when displaying reCAPTCHA with the registration form.
 = Version 3.1.6 =
 * WordPress MS fixes. Should now work out of the box at the individual blog level. Thanks to [huyz](http://huyz.us/)
 * NOTICE: If anyone is interested in taking up development of this plugin, please contact me at blaenk@gmail.com.

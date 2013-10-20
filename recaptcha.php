@@ -275,7 +275,7 @@ COMMENT_FORM;
             else
                 $use_ssl = false;
 
-            $escaped_error = htmlentities($_GET['rerror'], ENT_QUOTES);
+            $escaped_error = !empty( $_GET['rerror'] ) ? htmlentities($_GET['rerror'], ENT_QUOTES) : null;
 
             // if it's for wordpress mu, show the errors
             if ($this->is_multi_blog()) {
